@@ -61,6 +61,39 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     desconectarDB($conexion);
 }
 
+function ElimUser($conexion, $email){
+    $email = mysqli_real_escape_string($conexion, $email);
+    
+
+    $query = "DELETE FROM usuario WHERE ('$email')";
+
+        $resultado = mysqli_query($conexion, $query);
+
+        //Verificar si la consulta fue exitosa
+        if($resultado){
+        return 
+        header("Location: ../../vista/vistas/inicio.php");
+        } else {
+        return false;
+        header("Location: ../../vista/vistas/inicio.php");
+        }
+
+}
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            
+        $email = $_POST['email'];
+
+        //$conexion = conectarDB();
+
+        if(ElimUser($conexion, $email)){
+            header("Location: ../../vista/vistas/inicio.php");
+        } else {
+            header("Location: ../../vista/vistas/inicio.php");
+        }
+
+        desconectarDB($conexion);
+   }
+
 ?>
 
 

@@ -1,0 +1,17 @@
+.bar{
+    position: fixed !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* form structure and style */
+#form {
+    width: 100%; /* form width */
+    max-width: 500px; /* form max width */
+    margin: 0 auto; /* center form */
+    padding: 20px; /* form padding */
+    box-sizing: border-box; /* include padding and border in element's total width and height */
+    background-color: #f1f1f1; /* form background color */
+    border: 1px solid #ddd; /* form border */
+    border-radius: 5px; /* form border radius */
+}
